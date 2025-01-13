@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Practice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #greeting {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+<h1>JavaScript Practice</h1>
+
+<script>
+    // Variables and Data Types
+    let name = "John Doe"; // string
+    let age = 25; // number
+    let isStudent = true; // boolean
+    let hobbies = ["reading", "gaming", "hiking"]; // array
+    let user = { firstName: "John", lastName: "Doe" }; // object
+
+    console.log(`Name: ${name} (Type: ${typeof name})`);
+    console.log(`Age: ${age} (Type: ${typeof age})`);
+    console.log(`Is student: ${isStudent} (Type: ${typeof isStudent})`);
+    console.log(`Hobbies: ${hobbies} (Type: ${typeof hobbies})`);
+    console.log(`User: ${JSON.stringify(user)} (Type: ${typeof user})`);
+
+    // Simple Calculator Function
+    function calculator() {
+        let firstNumber = parseFloat(prompt("Enter the first number:"));
+        let secondNumber = parseFloat(prompt("Enter the second number:"));
+        let operation = prompt("Choose an operation (+, -, *, /):");
+
+        if (isNaN(firstNumber) || isNaN(secondNumber)) {
+            alert("Please enter valid numbers.");
+            return;
+        }
+
+        let result;
+        switch (operation) {
+            case '+':
+                result = firstNumber + secondNumber;
+                break;
+            case '-':
+                result = firstNumber - secondNumber;
+                break;
+            case '*':
+                result = firstNumber * secondNumber;
+                break;
+            case '/':
+                if (secondNumber !== 0) {
+                    result = firstNumber / secondNumber;
+                } else {
+                    alert("Cannot divide by zero.");
+                    return;
+                }
+                break;
+            default:
+                alert("Invalid operation.");
+                return;
+        }
+
+        alert(`Result: ${result}`);
+    }
+
+    // Call the calculator function
+    calculator();
+
+    // Greeting Function
+    function greetUser(name) {
+        return `Hello, ${name}! Welcome to JavaScript practice.`;
+    }
+
+    // Display greeting message
+    document.getElementById('greeting').innerText = greetUser(name);
+</script>
+
+<div id="greeting"></div>
+
+</body>
+</html>
