@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Assignment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #dynamic-content {
+            margin-top: 20px;
+            font-size: 1em;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+<h1>JavaScript Assignment</h1>
+<p>Learning JavaScript is fun!</p>
+<div id="dynamic-content"></div>
+
+<script>
+    // Part 1: If Statements
+    let age = parseInt(prompt("Please enter your age:"));
+    let eligibilityMessage;
+
+    if (age >= 18) {
+        eligibilityMessage = "You are eligible to vote.";
+    } else {
+        eligibilityMessage = "You are not eligible to vote.";
+    }
+
+    // Display the eligibility message in the dynamic-content div
+    document.getElementById('dynamic-content').innerText = eligibilityMessage;
+
+    // Part 2: Loops
+    let numberList = "<ol>";
+    for (let i = 1; i <= 10; i++) {
+        numberList += `<li>${i}</li>`;
+    }
+    numberList += "</ol>";
+
+    // Append the number list to the dynamic-content div
+    document.getElementById('dynamic-content').innerHTML += numberList;
+
+    // Part 3: Introduction to the DOM
+    // Change the text of the h1 element
+    document.querySelector('h1').innerText = "JavaScript in Action!";
+
+    // Add a new paragraph inside the dynamic-content div
+    let newParagraph = document.createElement('p');
+    newParagraph.innerText = "This content was added  using JavaScript.";
+    document.getElementById('dynamic-content').appendChild(newParagraph);
+</script>
+
+</body>
+</html>
